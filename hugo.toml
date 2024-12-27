@@ -2,3 +2,4 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = "Andrew Halaney's Blog"
 theme = 'PaperMod'
+enableRobotsTXT = true
