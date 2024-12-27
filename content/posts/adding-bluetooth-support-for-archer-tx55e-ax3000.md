@@ -1,7 +1,6 @@
 +++
 title = 'Adding Bluetooth Support for Archer TX55E AX3000'
 date = 2024-12-27T11:40:24-06:00
-draft = true
 +++
 ## A living room PC with no bluetooth
 Recently I built a living room PC for usage as a media station
