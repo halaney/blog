@@ -7,8 +7,7 @@ Recently I built a living room PC for usage as a media station
 (movies, shows, games, etc). After installing Fedora 41 and doing
 some basic configuration with a keyboard and mouse plugged in
 I decided to test out my Xbox controller and new bluetooth keyboard:
-
-**< TODO > picture of the failure would be nice here.**
+{{< video src="/bluetooth-fail.mp4" type="video/mp4" preload="auto" >}}
 
 rats, that's not good -- I've got no good interface to the
 machine without the Bluetooth up and running. I poked at
