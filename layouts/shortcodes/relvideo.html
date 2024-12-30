@@ -1,0 +1,15 @@
+{{ $src := .Get "src" }}
+{{ $type := .Get "type" | default "video/mp4" }}
+{{ $preload := .Get "preload" | default "auto" }}
+{{ $autoplay := .Get "autoplay" | default "true" }}
+{{ $loop := .Get "loop" | default "true" }}
+{{ $muted := .Get "muted" | default "true" }}
+{{ $playsinline := .Get "playsinline" | default "true" }}
+{{ $class := .Get "class" | default "video-shortcode" }}
+
+<video class="{{ $class }}" preload="{{ $preload }}" controls
+    autoplay="{{ $autoplay }}" loop="{{ $loop }}" muted="{{ $muted }}" playsinline="{{ $playsinline }}">
+    <source src="{{ $src | relURL }}" type="{{ $type }}">
+    There should have been a video here but your browser does not seem
+    to support it.
+</video>

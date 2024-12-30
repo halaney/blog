@@ -1,0 +1,10 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $title := .Get "title" | default "" }}
+{{ $caption := .Get "caption" | default "" }}
+
+<figure>
+  <img src="{{ $src | relURL }}" alt="{{ $alt }}" {{ with $title }}title="{{ . }}"{{ end }}>
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+

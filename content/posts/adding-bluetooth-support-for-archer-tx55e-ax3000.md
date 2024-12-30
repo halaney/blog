@@ -7,7 +7,7 @@ Recently I built a living room PC for usage as a media station
 (movies, shows, games, etc). After installing Fedora 41 and doing
 some basic configuration with a keyboard and mouse plugged in
 I decided to test out my Xbox controller and new bluetooth keyboard:
-{{< video src="/bluetooth-fail.mp4" type="video/mp4" preload="auto" >}}
+{{< relvideo src="bluetooth-fail.mp4" type="video/mp4" preload="auto" >}}
 
 rats, that's not good -- I've got no good interface to the
 machine without the Bluetooth up and running. I poked at
@@ -38,7 +38,7 @@ in (for the wifi parts of the Archer TX55E AX3000) and a
 USB header attached to the device as well. The wifi works great,
 and the Bluetooth is supposed to be provided over the USB connection.
 
-![Archer TX55E / AX3000 Box](/archer-tx55e-box.jpg)
+{{< relimage src="archer-tx55e-box.jpg" alt="Archer TX55E / AX3000 Box" >}}
 
 {{< mermaid >}}
 graph TD
