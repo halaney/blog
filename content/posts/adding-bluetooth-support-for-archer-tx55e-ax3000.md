@@ -569,8 +569,16 @@ command is "Reset", i.e. a:
 > Command to reset the host controller, link manager and the radio module.
 
 Failing to reset at the beginning makes me think I'm still barking up the
-right tree. Let's see if we can make the kernel module louder by enabling
-dynamic debug for this module when it loads:
+right tree. Let's find that line in the kernel tree:
+```
+$ git grep "Opcode.*failed"
+net/bluetooth/hci_sync.c:                       bt_dev_err(hdev, "Opcode 0x%4.4x failed: %ld", opcode,
+```
+
+Looking around a little further, that's probably called by the `btusb` module.
+Let's see if we can make the kernel module louder by enabling
+[dynamic debug](https://www.kernel.org/doc/html/latest/admin-guide/dynamic-debug-howto.html#dynamic-debug)
+for this module when it loads:
 ```
 $ dmesg -c # clear the logs out
 $ modprobe -r btusb
@@ -592,13 +600,6 @@ $ dmesg
 [  301.303984] <intr> btusb:btusb_intr_complete:1318: hci0 urb 00000000efa42015 status -2 count 0
 [  301.304092] <intr> btusb:btusb_bulk_complete:1442: hci0 urb 0000000052323af2 status -2 count 0
 [  301.304173] <intr> btusb:btusb_bulk_complete:1442: hci0 urb 00000000a25e07f7 status -2 count 0
-```
-
-Yeah, things are failing almost immediately during our probe it seems. Let's
-fine that line in the kernel tree:
-```
-$ git grep "Opcode.*failed"
-net/bluetooth/hci_sync.c:                       bt_dev_err(hdev, "Opcode 0x%4.4x failed: %ld", opcode,
 ```
 
 ### A stroke of luck
